@@ -6,7 +6,7 @@ class Blog(BaseModel):
     title: str
     body: str
 
-    class Config:
+    class ConfigDict:
         from_attributes = True
 
 
@@ -21,7 +21,7 @@ class ShowUser(BaseModel):
     email: str
     blogs: list[Blog] = []
 
-    class Config:
+    class ConfigDict:
         from_attributes = True
 
 
@@ -31,7 +31,7 @@ class ShowBlog(BaseModel):
     creator: ShowUser
 
     # using SQLite DB
-    class Config:
+    class ConfigDict:
         from_attributes = True
 
 
